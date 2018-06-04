@@ -1,6 +1,6 @@
 # bphots-website
 
-> photsWebsite
+> bphotsWebsite
 
 ## Build Setup
 
