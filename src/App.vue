@@ -21,6 +21,16 @@ export default {
 #app {
   min-height: 100vh;
   background-color: #000;
-  opacity: .8;
+  opacity: .4;
+  color:#ffff;
+}
+body{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, å¾®è½¯é›…é»‘, simhei;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
 }
 </style>
