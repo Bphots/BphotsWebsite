@@ -20,6 +20,7 @@
   display: flex;
   justify-content: space-between;
   height: 20%;
+  z-index: 1;
 }
 .logo{
   width: 20%;
