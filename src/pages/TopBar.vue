@@ -2,16 +2,24 @@
     <div class="topBar">
       <div class="logo">logo</div>
       <div class="topBarMenu">
-        <div class="updateLog">更新日志</div>
-        <div class="Login">登录</div>
-        <div class="languageChange">中英文转换</div>
+        <div class="updateLog" @click="updateLog">更新日志</div>
+        <div class="Login" @click="loginBlizzard">登录</div>
+        <div class="languageChange" @click="changeLanguge">中英文转换</div>
       </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "TopBar"
+        name: "TopBar",
+        data(){
+          return{}
+        },
+      methods:{
+        loginBlizzard(){},
+        changeLanguge(){},
+        updateLog(){},
+      },
     }
 </script>
 

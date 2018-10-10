@@ -1,8 +1,8 @@
 <template>
     <div class="HomeSwiper">
-      <swiper :options="swiperOption">
-        <swiper-slide class="slide-1" v-for="(banners,index) in Pic">
-          <img :src=banners.img>
+      <swiper :options="swiperOption" style="  height: 100%;">
+        <swiper-slide class="slide" v-for="(banners,index) in Pic">
+          <div class="Img" :style="{backgroundImage:'url('+banners.img+')'}"></div>
         </swiper-slide>
         <!--<div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>-->
         <!--<div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>-->
@@ -47,9 +47,15 @@
           swiperOption: {
             spaceBetween: 30,
             effect: 'fade',
+            loop:true,
+            autoplay:{
+              delay:4000,
+              stopOnLastSlide: false,
+              disableOnInteraction: true,
+            },
             pagination: {
               el: '.swiper-pagination',
-              clickable: true
+              clickable: false
             },
           },
           navigation: {
@@ -69,6 +75,18 @@
   left: 0;
   right: 0;
   margin: auto;
+  width: 100%;
+  height: 100%;
   z-index: -1;
 }
+.slide{
+  height: 100%;
+  width: 100%;
+}
+  .Img{
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
 </style>
