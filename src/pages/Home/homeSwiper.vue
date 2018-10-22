@@ -1,8 +1,8 @@
 <template>
     <div class="HomeSwiper">
-      <swiper :options="swiperOption" style="  height: 100%;">
-        <swiper-slide class="slide" v-for="(banners,index) in Pic">
-          <div class="Img" :style="{backgroundImage:'url('+banners.img+')'}"></div>
+      <swiper :options="swiperOption" style=" width:110%;height: 100%;">
+        <swiper-slide class="slide" v-for="(banners,index) in Pic" :key="index" :style="{backgroundImage:'url('+banners.img+')'}">
+          <!--<div class="Img" :style="{backgroundImage:'url('+banners.img+')'}"></div>-->
         </swiper-slide>
         <!--<div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>-->
         <!--<div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>-->
@@ -57,6 +57,11 @@
               el: '.swiper-pagination',
               clickable: false
             },
+            on: {
+              slideChangeTransitionEnd: function(){
+                console.log(this.activeIndex);//切换结束时，告诉我现在是第几个slide
+              },
+            }
           },
           navigation: {
             nextEl: '.swiper-button-next',
@@ -81,12 +86,15 @@
 }
 .slide{
   height: 100%;
-  width: 100%;
+  /*width: 110%;*/
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  animation: 6s slideToLeft linear forwards;
 }
-  .Img{
-    height: 100%;
-    width: 100%;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-  }
+  /*.Img{*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*background-size: 100% 100%;*/
+    /*background-repeat: no-repeat;*/
+  /*}*/
 </style>

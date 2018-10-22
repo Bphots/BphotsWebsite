@@ -1,17 +1,23 @@
 <template>
 <div>
   <HomeSwiper/>
-<TopBar/>
+  <TopBar/>
+  <home-container/>
+  <home-footer/>
 </div>
 </template>
 
 <script>
   import TopBar from '../TopBar';
   import HomeSwiper from '../Home/homeSwiper'
+  import HomeContainer from '../Home/HomeContainer'
+  import HomeFooter from '../Home/HomeFooter'
     export default {
       components: {
         TopBar,
-        HomeSwiper
+        HomeSwiper,
+        HomeContainer,
+        HomeFooter
       },
       name: "Home",
       component:{
