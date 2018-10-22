@@ -1,11 +1,11 @@
-import Vue from 'Vue'
+import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state:{
-    picAuthor:'123'
+    picAuthor:''
   },
   mutations: {
    setpicAuthor(state,name){
