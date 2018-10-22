@@ -5,6 +5,9 @@ import App from './App';
 import router from './router';
 import store from './store'
 import axios from 'axios';
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
 //axios.defaults.baseURL=''
 Vue.config.productionTip = false;
 /* eslint-disable no-new */

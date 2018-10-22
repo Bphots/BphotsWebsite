@@ -14,6 +14,7 @@
 <script>
   import 'swiper/dist/css/swiper.css';
   import { swiper, swiperSlide } from 'vue-awesome-swiper';
+  var myVue = {}
     export default {
         name: "homeSwiper",
         components:{
@@ -25,23 +26,28 @@
           Pic: [
             {
               id: 1,
-              img: 'http://113.107.241.242/attachment/material/imagestVgUshKbtYOWHUVSl1BP59OTs3IgXD.jpg'
+              img: 'http://113.107.241.242/attachment/material/imagestVgUshKbtYOWHUVSl1BP59OTs3IgXD.jpg',
+              name:'byron007'
             },
             {
-              id: 1,
-              img: 'http://113.107.241.242/attachment/material/imagesCdPRsQqcL5ajVoVcB5j31X5VJRnJcs.jpg'
+              id: 2,
+              img: 'http://113.107.241.242/attachment/material/imagesCdPRsQqcL5ajVoVcB5j31X5VJRnJcs.jpg',
+              name:'Stooooo'
             },
             {
-              id: 1,
-              img: 'http://113.107.241.242/attachment/material/images7wo8UEoSaFIFTAUu60kXWle3F1Kd2F.jpg'
+              id: 3,
+              img: 'http://113.107.241.242/attachment/material/images7wo8UEoSaFIFTAUu60kXWle3F1Kd2F.jpg',
+              name:'squidsmith'
             },
             {
-              id: 1,
-              img: 'http://113.107.241.242/attachment/material/images95s9ZmT3cS1k8f7a9xASfbbc210qTw.jpg'
+              id: 4,
+              img: 'http://113.107.241.242/attachment/material/images95s9ZmT3cS1k8f7a9xASfbbc210qTw.jpg',
+              name:'Blizzard'
             },
             {
-              id: 1,
-              img: 'http://113.107.241.242/attachment/material/imageshho1ZeT3cSxcX8eA5XePqm82ffaiXz.jpg'
+              id: 5,
+              img: 'http://113.107.241.242/attachment/material/imageshho1ZeT3cSxcX8eA5XePqm82ffaiXz.jpg',
+              name:'Blizzard'
             }
           ],
           swiperOption: {
@@ -60,6 +66,10 @@
             on: {
               slideChangeTransitionEnd: function(){
                 console.log(this.activeIndex);//切换结束时，告诉我现在是第几个slide
+                let index = this.activeIndex
+                index = parseInt(index) - 1
+               console.log(myVue.Pic[index].name)
+                myVue.$store.commit('setpicAuthor',myVue.Pic[index].name)
               },
             }
           },
@@ -68,6 +78,9 @@
             prevEl: '.swiper-button-prev'
           }
         }
+      },
+      beforeCreate () {
+        myVue = this
       }
     }
 </script>

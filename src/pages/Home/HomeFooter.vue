@@ -14,6 +14,14 @@
   import {mapState} from 'vuex'
     export default {
         name: "home-footer",
+      data(){
+          return{}
+      },
+      watch:{
+          picAuthor(val){
+            console.log('picAuthor',val)
+          }
+      },
       computed:{
         ...mapState({
           picAuthor:'picAuthor',
