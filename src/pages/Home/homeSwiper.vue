@@ -65,11 +65,10 @@
             },
             on: {
               slideChangeTransitionEnd: function(){
-                console.log(this.activeIndex);//切换结束时，告诉我现在是第几个slide
-                let index = this.activeIndex
-                index = parseInt(index) - 1
-               console.log(myVue.Pic[index].name)
-                myVue.$store.commit('setpicAuthor',myVue.Pic[index].name)
+                let index = parseInt(this.activeIndex) - 1
+                //console.log(index);//切换结束时，告诉我现在是第几个slide
+                if(index > 4) myVue.$store.commit('setpicAuthor','Blizzard')
+                if(index < 4) myVue.$store.commit('setpicAuthor',myVue.Pic[index].name)
               },
             }
           },

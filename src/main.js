@@ -5,9 +5,11 @@ import App from './App';
 import router from './router';
 import Axios from 'axios';
 import store from './store'
+import iView from 'iview'
+import 'iview/dist/styles/iview.css'
 //axios.defaults.baseURL=''
 Vue.config.productionTip = false;
-/* eslint-disable no-new */
+Vue.use(iView)
 Vue.prototype.$axios = Axios
 new Vue({
   el: '#app',

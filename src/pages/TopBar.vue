@@ -5,7 +5,15 @@
       </div>
       <div class="topBarMenu">
         <div class="nav-item" @click="updateLog">更新日志</div>
-        <div class="nav-item" @click="loginBlizzard">登录</div>
+        <Dropdown class="nav-item">
+          <a href="javascript:void(0)">
+            登录
+            <Icon type="ios-arrow-down"></Icon>
+          </a>
+          <DropdownMenu slot="list">
+            <DropdownItem v-for="(area,index) in areaServe" :key="index"  @click="loginBlizzard(index)">{{area}}</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
         <div class="nav-item" @click="changeLanguge">中英文转换</div>
       </div>
     </div>
@@ -15,7 +23,9 @@
     export default {
         name: "TopBar",
         data(){
-          return{}
+          return{
+            areaServe:['国服','亚服','美服','欧服']
+          }
         },
       methods:{
         loginBlizzard(){},

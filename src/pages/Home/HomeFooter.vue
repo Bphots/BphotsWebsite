@@ -19,7 +19,6 @@
       },
       watch:{
           picAuthor(val){
-            console.log('picAuthor',val)
           }
       },
       computed:{
